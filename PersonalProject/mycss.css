@@ -1,0 +1,93 @@
+
+/*background: black paints the page.
+height: 100% makes it as tall as the window
+(percentages need the parent sized too, so we set it on both).
+margin: 0 removes the browser’s default gap so the black reaches every edge.
+overflow: hidden removes scrollbars, 
+which matters because our scrolling text will be far wider than the screen.*/
+
+html, body {
+  background: black;  /* black page */
+  height: 100%;       /* as tall as the window */
+  margin: 0;          /* remove the default gap at the sides*/
+  overflow: hidden;   /* no scrollbars */
+}
+
+/*.row is a 48px strip, and overflow: hidden clips anything outside it, 
+so the long track looks like a window onto a moving strip. 
+.track uses display: flex to put links side by side, 
+width: max-content to make it exactly as wide as all its links 
+(not squashed to the screen), 
+and white-space: nowrap to stop wrapping.*/
+
+.row { height: 48px; overflow: hidden; }
+
+.track {
+  display: flex;          /* links side by side */
+  width: max-content;     /* as wide as all links together */
+  white-space: nowrap;    /* never wrap onto a second line */
+}
+
+/*ine-height: 48px matches the row height, which centres the text vertically. 
+1.5rem means 1.5 × the base size (normally 16px), so 24px. 
+margin-right: 2rem spaces the links out. 
+The font list is tried in order: 
+Trebuchet MS, then Arial, then any sans-serif.*/
+
+.track a {
+  color: white;
+  text-decoration: none;  /* no underline */
+  font-size: 1.5rem;      /* 1.5 x 16px = 24px */
+  line-height: 48px;      /* same as the row: centres vertically */
+  margin-right: 2rem;     /* gap after each link */
+  cursor: pointer;
+}
+
+/*Animation has two parts. @keyframes describes what moves 
+(just a start and an end, the browser fills in between).
+The animation property says how: 20s per loop,
+linear (constant speed), infinite (forever)*/
+
+.track { animation: 20s linear infinite; }  /* how: speed, style, repeat */
+
+.to-left { animation-name: scroll-left; }   /* which animation to use */
+
+@keyframes scroll-left {                    /* what: start and end */
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.to-right { animation-name: scroll-right; }
+
+@keyframes scroll-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/*#final targets the element with id="final"
+It starts with display: none,  so it is hidden and takes no space. 
+JavaScript would later change it to flex to reveal it.
+justify-content centres horizontally,
+align-items centres vertically,
+and height: 100% gives it the full screen to centre in.
+The heading flashes using steps(1), 
+which makes the colour jump instead of fade: half a second red, 
+half a second white.*/
+
+#final {
+  display: none;            /* hidden until JavaScript shows it */
+  height: 100%;
+  justify-content: center;  /* needs display: flex to work */
+  align-items: center;
+  text-align: center;
+}
+
+#final h1 {
+  animation: flash 1s steps(1) infinite;  /* steps(1) = instant jump */
+}
+
+@keyframes flash {
+  0%   { color: red; }
+  50%  { color: white; }
+}
+
