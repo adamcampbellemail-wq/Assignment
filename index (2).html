@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!-- ======================================================================
+     HOW TO READ THIS FILE (for beginners)
+     ----------------------------------------------------------------------
+     HTML is made of TAGS written in angle brackets, like <p>. Most tags
+     come in pairs: <p> opens and </p> closes. Tags can sit INSIDE other
+     tags, like boxes inside boxes. The indentation (spaces at the start
+     of lines) shows which box is inside which. The browser ignores the
+     indentation, but it makes the code easy for humans to read.
+     Text like this, between the "less than, exclamation mark" and
+     "arrow" symbols, is a COMMENT. The browser ignores it completely.
+
+     WHAT WAS OPTIMISED (compared with the first version)
+     1. The font link no longer downloads a font weight we never use.
+     2. The links now sit inside a <nav> tag, which tells browsers and
+        screen readers "this is the navigation menu".
+     3. Buttons now have type="button", which is good practice.
+     4. A page description was added for search engines.
+     5. Indentation was restored and every section is labelled.
+     The page looks the same as before. Your style.css needs no changes.
+     ====================================================================== -->
+
+<!-- Tells the browser "this is a modern HTML5 page". Always the first
+     line. -->
+
+<!-- The outer box for the whole page. lang="en" is an ATTRIBUTE (extra
+     information inside a tag) saying the page is in English. Screen
+     readers and translation tools use it. -->
+<html lang="en">
+
+<!-- ======================================================================
+     HEAD: information ABOUT the page. Visitors don't see it on the page.
+     ====================================================================== -->
+<head>
+  <!-- Character set. UTF-8 covers almost every letter and symbol, so
+       characters like the copyright sign display correctly. -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the page match the real width of a phone instead of
+       pretending to be a wide desktop screen and shrinking everything. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- NEW: a short description. Search engines like Google may show it
+       under your page's name in search results. -->
+  <meta name="description" content="A simple landing page built with HTML and CSS.">
+
+  <!-- The text shown on the browser tab. -->
+  <title>Landing Page</title>
+
+  <!-- FONT: Roboto from Google Fonts.
+       The two "preconnect" lines open an early connection to Google's
+       servers so the font arrives faster. The first serves the font's
+       CSS, the second serves the actual font files (crossorigin is
+       needed because the files come from a different website). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- OPTIMISED: this line loads the font itself. Each "0,400" means
+       "not italic, weight 400". Only the styles the page really uses
+       are downloaded:
+         0,400 = regular   (normal text)
+         0,700 = bold      (logo, buttons, author, call-to-action title)
+         0,900 = extra bold (main headings)
+         1,300 = light italic (the quote)
+       The old version also downloaded "0,300" (light, NOT italic), but
+       nothing on the page uses it. Removing it makes the page load a
+       little faster. display=swap shows a backup font straight away,
+       then switches to Roboto when it arrives. -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+  <!-- Your own CSS file. It comes AFTER the font so the font is ready
+       when your styles use it. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- ======================================================================
+     BODY: everything visitors actually see.
+     ====================================================================== -->
+<body>
+
+  <!-- ====================================================================
+       SECTIONS 1 AND 2: HEADER AND HERO
+       A <div> is a plain invisible box. This one wraps both parts so a
+       single dark background colour covers them with no gap. The
+       class="hero-wrapper" is a name tag that lets the CSS find it.
+       ==================================================================== -->
+  <div class="hero-wrapper">
+
+    <!-- <header> = the top of the page: logo on the left, menu on the right. -->
+    <header>
+      <div class="logo">Header Logo</div>
+
+      <!-- NEW: <nav> means "navigation links". It looks no different on
+           screen, but it helps screen readers and search engines
+           understand the page. aria-label gives the menu a name that a
+           screen reader can announce. -->
+      <nav aria-label="Main">
+        <!-- <ul> is an unordered list and each <li> is one item in it.
+             The CSS removes the bullets and lays the items out in a row.
+             <a> is a clickable link. href="#" is a placeholder that goes
+             nowhere yet; replace it with a real page address later. -->
+        <ul>
+          <li><a href="#">header link one</a></li>
+          <li><a href="#">header link two</a></li>
+          <li><a href="#">header link three</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- <section> = a themed part of the page. The hero is the big
+         eye-catching intro. It has two columns, so it holds two boxes. -->
+    <section class="hero">
+
+      <!-- LEFT COLUMN: heading, text and button stacked on top of each other. -->
+      <div class="hero-text">
+        <!-- <h1> is the main heading. Use only ONE <h1> per page. -->
+        <h1>This website is awesome</h1>
+        <!-- <p> is a paragraph of text. -->
+        <p>This website has some subtext that goes here under the main title. It's a smaller font and the color is lower contrast</p>
+        <!-- NEW: type="button" tells the browser this button is not
+             submitting a form. It is good practice, and avoids surprise
+             behaviour if the button is ever placed inside a form. -->
+        <button class="button" type="button">Sign up</button>
+      </div>
+
+      <!-- RIGHT COLUMN: a grey box that stands in for a real image. -->
+      <div class="hero-image">this is a placeholder for an image</div>
+    </section>
+  </div>
+
+
+  <!-- ====================================================================
+       SECTION 3: INFORMATION
+       A heading, then four identical items. Each item is one column
+       holding a blue-outlined square and a caption underneath.
+       (Plain HTML has no way to repeat a block automatically, so the
+       four copies are written out by hand. Later, JavaScript can
+       generate repeats like this for you.)
+       ==================================================================== -->
+  <section class="info">
+    <!-- <h2> is a second-level heading, one step below the <h1>. -->
+    <h2>Some random information.</h2>
+
+    <div class="info-boxes">
+      <div class="info-item">
+        <div class="info-box"></div>
+        <p>this is some subtext under an illustration or image</p>
+      </div>
+      <div class="info-item">
+        <div class="info-box"></div>
+        <p>this is some subtext under an illustration or image</p>
+      </div>
+      <div class="info-item">
+        <div class="info-box"></div>
+        <p>this is some subtext under an illustration or image</p>
+      </div>
+      <div class="info-item">
+        <div class="info-box"></div>
+        <p>this is some subtext under an illustration or image</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       SECTION 4: QUOTE
+       The grey band. quote-inner is a narrower box inside it, which
+       keeps the text in a readable column.
+       ==================================================================== -->
+  <section class="quote">
+    <div class="quote-inner">
+      <!-- <blockquote> is the correct tag for a quotation. -->
+      <blockquote>
+        This is an inspiring quote, or a testimonial from a customer. Maybe it's just filling up space, or maybe people will actually read it. Who knows? All I know is that it looks nice.
+      </blockquote>
+      <!-- The author is in its own paragraph so CSS can make it bold
+           and push it to the right. -->
+      <p class="quote-author">-Thor, God of Thunder</p>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       SECTION 5: CALL TO ACTION ("cta")
+       The blue box: text on the left, button on the right.
+       ==================================================================== -->
+  <section class="cta">
+    <div class="cta-text">
+      <h3>Call to action! It's time!</h3>
+      <p>Sign up for our product by clicking that button right over there!</p>
+    </div>
+    <!-- This button has TWO classes separated by a space.
+         "button" gives the shared shape; "button-outline" changes it to
+         see-through with a white border. -->
+    <button class="button button-outline" type="button">Sign up</button>
+  </section>
+
+
+  <!-- ====================================================================
+       SECTION 6: FOOTER
+       &copy; is a special code (called an entity) that shows the
+       copyright sign. Entities start with & and end with ;
+       ==================================================================== -->
+  <footer>
+    <p>Copyright &copy; The Odin Project 2021</p>
+  </footer>
+
+</body>
+</html>
