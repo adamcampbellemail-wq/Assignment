@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Dark background: header, hero, footer */
+.hero-wrapper,
+footer {
+  background-color: #1F2937;
+}
+
+/* Logo text */
+.logo {
+  font-size: 24px;
+  color: #F9FAF8;
+  font-weight: 700;
+}
+
+/* Hero main text */
+.hero h1 {
+  font-size: 48px;
+  color: #F9FAF8;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+/* Hero secondary text and header links */
+.hero p,
+header a {
+  font-size: 18px;
+  color: #E5E7EB;
+}
+
+.hero p {
+  margin-bottom: 16px;
+}
+
+/* Button and call to action background */
+.button,
+.cta {
+  background-color: #3882F6;
+}
+
+/* Information heading */
+.info h2 {
+  font-size: 36px;
+  color: #1F2937;
+  font-weight: 900;
+}
+
+/* Quote */
+.quote {
+  background-color: #E5E7EB;
+}
+
+.quote blockquote {
+  font-size: 36px;
+  color: #1F2937;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Header and hero layout */
+header,
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 16px 0;
+}
+
+header ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.hero {
+  padding: 80px 0;
+  gap: 48px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  height: 240px;
+  background-color: #6B7280;
+  color: #E5E7EB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Button */
+.button {
+  color: #F9FAF8;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 32px;
+  cursor: pointer;
+}
