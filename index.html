@@ -1,63 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
-
-  <!-- Roboto font from Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
-
-  <!-- Your own CSS (after font) -->
-  <link rel="stylesheet" href="style.css">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Landing Page</title>
+     <!-- links to google font-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
+     <!-- links to my stle sheet-->
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- wraps header and hero sections together-->
+<div class="header-hero">
+<!--Controls the overall header area.
+     The CSS .site-header can position the logo on the left
+     and navigation on the right using Flexbox.-->
+<header class="site-header">
+     <!-- Creates the clickable words Header Logo. 
+          The CSS .site-logo controls their appearance, 
+          such as font size, weight and colour.-->
+     <a class="site-logo" href="#main">Header Logo</a>
 
-  <!-- Header + Hero (dark section) -->
-  <div class="hero-wrapper">
-    <header>
-      <div class="logo">Header Logo</div>
-      <ul>
-        <li><a href="#">header link one</a></li>
-        <li><a href="#">header link two</a></li>
-        <li><a href="#">header link three</a></li>
-      </ul>
-    </header>
-
-    <section class="hero">
-      <div class="hero-text">
-        <h1>This website is awesome</h1>
-        <p>This website has some subtext that goes here under the main title. It's a smaller font and the color is lower contrast</p>
-        <button class="button">Sign up</button>
-      </div>
-
-      <div class="hero-image">
-        this is a placeholder for an image
-      </div>
-    </section>
-  </div>
-
-  <!-- Information section -->
-  <section class="info">
-    <!-- heading + 4 boxes -->
-  </section>
-
-  <!-- Quote section -->
-  <section class="quote">
-    <!-- quote + author -->
-  </section>
-
-  <!-- Call to action section -->
-  <section class="cta">
-    <!-- call to action -->
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>Copyright &copy; The Odin Project 2021</p>
-  </footer>
-
+<!-- Groups the navigation links. 
+     The CSS .header-links can arrange 
+     them in a row with spacing between them.-->
+<nav class="header-nav">
+     <!-- list-->
+     <ul class="header-links">
+          <!-- Targets the individual links inside the navigation, 
+               allowing you to change their text colour, 
+               font size and underlining.-->
+          <li><a href="#one">header link one</a></li>
+          <li><a href="#two">header link two</a></li>
+          <li><a href="#three">header link three</a></li>        
+     </ul>
+</nav>
+</header>
+<!-- Groups the hero area together-->
+<section class="hero">
+     <!-- Left column: heading, text and button -->
+     <div class="hero-content">
+          <!-- the main page heading.-->
+          <h1>This website is awesome</h1>
+          <!-- contains the supporting text-->
+          <p>This website has some subtext that goes here under the main title.
+               it's a smaller font and the color is lower contrast</p>
+               <!-- creates the sign-up button-->
+               <button class="button" type="button">Sign up</button>
+               </div>
+          <!-- .hero-content and .hero-image should be siblings — both directly inside .hero.-->
+          <!-- Right column: grey image placeholder -->
+          <!-- acts as a grey placeholder instead of a real image.-->
+          <div class="hero-image">This is a placeholder for an image</div>
+          </section>
+     </div>
 </body>
 </html>

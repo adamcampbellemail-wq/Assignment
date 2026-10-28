@@ -5,116 +5,90 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
-/* Dark background: header, hero, footer */
-.hero-wrapper,
-footer {
+.header-hero {
   background-color: #1F2937;
 }
 
-/* Logo text */
-.logo {
-  font-size: 24px;
-  color: #F9FAF8;
-  font-weight: 700;
-}
-
-/* Hero main text */
-.hero h1 {
-  font-size: 48px;
-  color: #F9FAF8;
-  font-weight: 900;
-  margin-bottom: 16px;
-}
-
-/* Hero secondary text and header links */
-.hero p,
-header a {
-  font-size: 18px;
-  color: #E5E7EB;
-}
-
-.hero p {
-  margin-bottom: 16px;
-}
-
-/* Button and call to action background */
-.button,
-.cta {
-  background-color: #3882F6;
-}
-
-/* Information heading */
-.info h2 {
-  font-size: 36px;
-  color: #1F2937;
-  font-weight: 900;
-}
-
-/* Quote */
-.quote {
-  background-color: #E5E7EB;
-}
-
-.quote blockquote {
-  font-size: 36px;
-  color: #1F2937;
-  font-weight: 300;
-  font-style: italic;
-}
-
-/* Header and hero layout */
-header,
-.hero {
+.site-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin-inline: auto;
   max-width: 1024px;
-  margin: 0 auto;
+  align-items: center;
+  padding: 6px 0px;
 }
 
-header {
-  padding: 16px 0;
-}
-
-header ul {
+.header-links {
   display: flex;
-  gap: 24px;
   list-style: none;
-}
-
-header a {
-  text-decoration: none;
+  gap: 24px;
 }
 
 .hero {
-  padding: 80px 0;
+  display: flex;
+  color: #F9FAF8;
   gap: 48px;
+  align-items: center;
+  margin-inline: auto;
+  max-width: 1024px;
+  padding: 100px 0 133px;
 }
 
-.hero-text {
+.hero-content,
+.hero-image {
   flex: 1;
 }
 
 .hero-image {
-  flex: 1;
-  height: 240px;
+  color: white;
   background-color: #6B7280;
-  color: #E5E7EB;
+  height: 273px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Button */
-.button {
-  color: #F9FAF8;
+.site-logo,
+.header-links a {
+  text-decoration: none;
+}
+
+.header-links a {
   font-size: 18px;
-  font-weight: 700;
+  color: #E5E7EB;
+}
+
+.site-logo {
+  font-weight: 900;
+  font-size: 24px;
+  color: #F9FAF8;
+}
+
+.button {
+  color: white;
+  background-color: #3882F6;
   border: none;
   border-radius: 8px;
   padding: 10px 32px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
 }
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 900;
+  color: #F9FAF8;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #E5E7EB;
+  margin-bottom: 16px;
+}
+
